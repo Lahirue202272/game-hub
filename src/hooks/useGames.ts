@@ -19,7 +19,7 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = (
+const useGames = ( 
   // selectedGenre: Genre | null,
   // selectedPlatform: Platform | null
   gameQuery: GameQuery
@@ -31,8 +31,10 @@ const useGames = (
       // platforms: selectedPlatform?.id 
       genres: gameQuery.genre?.id, 
       platforms: gameQuery.platform?.id, 
-      ordering: gameQuery.sortOrder
-    }},
+      ordering: gameQuery.sortOrder,
+      search: gameQuery.searchText
+    },
+  },
     // [selectedGenre?.id, selectedPlatform?.id]
     [gameQuery ]
   );
