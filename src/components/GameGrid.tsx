@@ -20,10 +20,10 @@ const GameGrid = ({gamequery}:Props) => {
   // const skeletons = [1, 2, 3, 4, 5, 6];
   const skeletons = Array.from({ length: 20 }, (_, i) => i + 1);
 
+  if (error) return <Text>{error}</Text>;
+
 
   return (
-    <>
-      {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding="10px"
@@ -41,7 +41,6 @@ const GameGrid = ({gamequery}:Props) => {
           </GameCardContainer>
         ))}
       </SimpleGrid>
-    </>
   );
 };
 
